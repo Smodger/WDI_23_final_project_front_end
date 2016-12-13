@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="finalProject">
+  <head>
+    <meta charset="utf-8">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="/css/vendor.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5p7q8Ryzq-b1m8hPfLttH0nYSQx_hLRk"></script>
+    <script src="/js/vendor.js" charset="utf-8"></script>
+    <script src="/js/app.js"></script>
+  </head>
+  <body ng-controller="MainController as main">
+
+    <nav class="navbar navbar-dark bg-inverse col-md-2">
+      <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+        <ul class="nav nav-stacked">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#/users">Users</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#/routes">Routes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+	  <main ui-view class="col-md-10 offset-md-2"></main>
+  </body>
+</html>

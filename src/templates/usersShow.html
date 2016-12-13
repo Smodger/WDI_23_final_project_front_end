@@ -1,0 +1,8 @@
+<h1>Users Show</h1>
+
+<h2>{{ usersShow.user.username }}</h2>
+<h4>{{ usersShow.user.email }}</h4>
+
+<a ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.editable">Edit</a>
+<button ng-click="usersShow.delete()" ng-if="usersShow.editable">Delete</button>
+<button ng-click="usersShow.allowUserToEdit()">Check</button>
