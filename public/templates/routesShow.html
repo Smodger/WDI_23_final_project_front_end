@@ -1,3 +1,12 @@
-<h1>Routes show</h1>
-<!-- DEAR TEACHING STAFF WHO HELPS ME, PLEASE REMIND ME TO ASK YOU ABOUT GITHUB -->
-<google-map center="routesShow.center" zoom="13" ng-if="routesShow.center" waypoints="routesShow.route.waypoints" class="routesShowMap"><google-map>
+<google-map center="routesShow.center" is-Traceable="true" is-editable="true" zoom="13" ng-if="routesShow.center" waypoints="routesShow.route.waypoints" class="routesShowMap"></google-map>
+
+<div class="routesShowFooter">
+  <ul>
+    <li>{{ routesShow.route.title}}</li>
+    <li>{{ routesShow.route.route_description}}</li>
+    <li>{{ routesShow.route.number_of_participants}}</li>
+    <li>{{ routesShow.route.conditions}}</li>
+    <li>{{ routesShow.route.season}}</li>
+  </ul>
+
+</div>
