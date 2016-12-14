@@ -16,25 +16,23 @@
       <div class="collapse navbar-toggleable-md" id="navbarResponsive">
         <ul class="nav nav-stacked">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <!-- WHEN USERS SHOW LINK IS WORKING DELETE USERS FROM NAV BAR -->
-          <li class="nav-item">
-            <a class="nav-link" href="/#/users">Users</a>
+            <a class="nav-link" href="/#/routes">All Routes <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/#/routes">All Routes</a>
+            <a class="nav-link" href="routesNew">Create Route</a>
           </li>
-        </ul>
-      </div>
-      <div class="userStatus">
-        <ul>
-          <li><a ui-sref="routesNew" ng-hide="profile.isLoggedIn()">Create Route</a></li>
-          <!-- NEED TO HOOK USER SHOW UP TO USER ID -->
-          <li><a ui-sref=usersShow/${waypoint.route.id} ng-hide="profile.isLoggedIn()">Show Profile</a></li>
-          <li><a ui-sref="login" ng-hide="profile.isLoggedIn()">Sign in</a></li>
-          <li><a ui-sref="register" ng-hide="profile.isLoggedIn()">Register</a></li>
-          <li><a ui-sref="logout" ng-hide="profile.isLoggedIn()">Logout</a></li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="usersShow({ id: main.currentUser.id })">Show Profile</a>
+          </li>
+          <li class="nav-item" ng-if="!main.isLoggedIn()">
+            <a class="nav-link" ui-sref="login">Sign in</a>
+          </li>
+          <li class="nav-item" ng-if="!main.isLoggedIn()">
+            <a class="nav-link" ui-sref="register">Register</a>
+          </li>
+          <li class="nav-item" ng-if="main.isLoggedIn()">
+            <a class="nav-link" ui-sref="login" ng-click="main.logout()">Logout</a>
+          </li>
         </ul>
       </div>
     </nav>
