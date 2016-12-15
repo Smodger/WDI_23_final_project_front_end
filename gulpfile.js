@@ -58,11 +58,6 @@ gulp.task('scripts', () => {
   //  .pipe(livereload());
 });
 
-"scripts": {
-    "start": "node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-
 // styles
 gulp.task('styles', () => {
   return gulp.src('src/scss/style.scss')
