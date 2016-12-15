@@ -1,8 +1,20 @@
+@import 'vendor';
+
+main {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+ul {
+  padding: 0;
+}
+
 .google-map {
   width: 100%;
   height: 100vh;
   margin: 0px;
 }
+
 
 .routesShowMap {
   width: 100%;
@@ -12,16 +24,40 @@
 
 .routesShowFooter {
   vertical-align: baseline;
-  background-color: #373a3c;
-  color: white;
+  background-color: #EEE  ;
+  color: #777879;
   width: 100%;
   height: 30vh;
-  margin:0px;
+  margin:20 0 0 0px;
+  padding: 30px;
   overflow: scroll;
+    h3 {
+      margin-bottom: .8rem;
+      color: #E37222;
+    }
+  // button {
+  //   position: relative;
+  //   right: 10px;
+  //   bottom: 5px;
+  //   display: inline-block;
+  // }
+  // .btn.btn-danger {
+  //   position: relative;
+  //   left: 10px;
+  //   bottom: 5px;
+  //   display: inline-block;
+  // }
+  li {
+    list-style-type: none !important;
+    display: inline-block;
+  }
 }
 
 nav.navbar {
   // height: 100vh;
+  background-color: #EEE;
+  border: 1px solid #777879;
+  color: #E37222;
   position: fixed;
   left: 0;
   top: 0;
@@ -31,5 +67,102 @@ nav.navbar {
   li {
     text-align: center;
     padding: 20px;
+  }
+}
+#geolocate {
+  background-color: #ffffff;
+  width:100%;
+  padding: 50px;
+  display: block;
+  margin: 0;
+  h2 {
+    color: #555555;
+    text-align: center;
+    padding: 20px 0 0 0;
+
+  }
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .titlearea {
+      font-weight: 700;
+      color: #555555;
+    }
+    .page-content {
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 16px;
+      color: #111111;
+    }
+    .locationButton {
+      width: 100%;
+    }
+
+  }
+}
+.image {
+  margin: auto;
+  margin-top: 30vh;
+  background-image: url("http://i2.walesonline.co.uk/lifestyle/fun-stuff/article10583610.ece/ALTERNATES/s615b/Image-11.jpg");
+  background-repeat: no-repeat;
+  width: 100vh;
+  color: white;
+}
+
+#mountainRescue {
+  background-color: #d6d6d6;
+  width:100%;
+  padding: 50px;
+  display: block;
+  margin: 0;
+  a {
+    text-align: center;
+    display: block;
+  }
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .titlearea {
+      font-weight: 700;
+      color: #555555;
+    }
+    .page-content {
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 16px;
+      color: #111111;
+    }
+  }
+}
+
+#textService {
+  background-color: beige;
+  width: 100%;
+  padding: 50px;
+  display: block;
+  margin: 0px;
+  a {
+    text-align: center;
+    display: block;
+  }
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .titlearea {
+      font-weight: 700;
+      color: #555555;
+    }
+    .page-content {
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 16px;
+      color: #111111;
+    }
   }
 }

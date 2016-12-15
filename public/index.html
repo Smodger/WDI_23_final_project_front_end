@@ -19,10 +19,13 @@
             <a class="nav-link" href="/#/routes">All Routes <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="routesNew">Create Route</a>
+            <a class="nav-link" ui-sref="routesNew">Create Route</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" ui-sref="usersShow({ id: main.currentUser.id })">Show Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="usefulInfo">Useful Information</a>
           </li>
           <li class="nav-item" ng-if="!main.isLoggedIn()">
             <a class="nav-link" ui-sref="login">Sign in</a>

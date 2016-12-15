@@ -24,20 +24,24 @@ function Router($stateProvider, $urlRouterProvider) {
       templateUrl: '/templates/routesIndex.html',
       controller: 'RoutesIndexController as routesIndex'
     })
+    .state('routesNew', {
+      url: '/routes/new',
+      templateUrl: '/templates/routesNew.html',
+      controller: 'RoutesNewController as routesNew'
+    })
     .state('routesShow', {
       url: '/routes/:id',
       templateUrl: '/templates/routesShow.html',
       controller: 'RoutesShowController as routesShow'
     })
-    .state('routesNew', {
-      url: '/routesNew',
-      templateUrl: '/templates.routesNew.html',
-      controller: 'RoutesNewController as routesNew'
-    })
     .state('routesEdit', {
       url: '/routes/:id/edit',
-      templateUrl: '/templates.routesEdit.html',
+      templateUrl: '/templates/routesEdit.html',
       controller: 'RoutesEditController as routesEdit'
+    })
+    .state('usefulInfo', {
+      url: '/usefulInfo',
+      templateUrl: '/templates/usefulInfo.html'
     })
     .state('register', {
       url: '/register',

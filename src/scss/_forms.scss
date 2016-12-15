@@ -1,0 +1,19 @@
+form {
+  padding: 20px;
+  // background-color: #CCC;
+  input, select {
+    color: hotpink;
+    width: 350px;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    color: black;
+  }
+  textarea {
+    width: 500px;
+  }
+
+  form {
+    margin: auto;
+  }
+}

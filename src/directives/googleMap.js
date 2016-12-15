@@ -14,7 +14,8 @@ function googleMap($window, $state, Waypoint) {
       waypoints: '=',
       hasInfoWindows: '=',
       isEditable: '=',
-      isTraceable: '='
+      isTraceable: '=',
+      routeId: '='
     },
     link: function ($scope, element) {
       console.log($scope);
@@ -24,20 +25,40 @@ function googleMap($window, $state, Waypoint) {
         mapTypeId: 'terrain'
       });
 
+
+      // function isAuthorised() {
+      //   if(main.currentUser === Route.user.id) {
+      //
+      //   }
+      // }
+
       // Addingwaypoints and updating their position so it orders the waypoints.
+      const createdWaypoints = [];
       function addWaypoint(event) {
+        console.log('clicked');
         const waypoint = {};
         waypoint.lat = event.latLng.lat();
         waypoint.lng = event.latLng.lng();
-        waypoint.route_id = $state.params.id;
-        waypoint.position = $scope.waypoints.length;
+        // If we are on exising route edit
+        if($state.params.id) {
+          waypoint.route_id = $state.params.id;
+          waypoint.position = $scope.waypoints.length + 1;
+        // If we are creating brand new route
+        } else {
+          waypoint.route_id = $scope.routeId;
+          createdWaypoints.push(waypoint);
+          waypoint.position = createdWaypoints.length;
+        }
         Waypoint.save(waypoint, (waypoint) => {
-          $scope.waypoints.push(waypoint);
+          if($state.params.id) {
+            $scope.waypoints.push(waypoint);
+          }
           createMarker(waypoint);
           drawPolyLines();
         });
       }
 
+      //ADD WAYPOINTS FOR EDIT (& CREATE)
       map.addListener('dblclick', addWaypoint);
 
       let markerRoutePathWaypoints = [];
@@ -49,11 +70,13 @@ function googleMap($window, $state, Waypoint) {
         map: map
       });
 
+
       //POLYLINES
       function drawPolyLines() {
         if($scope.isTraceable) {
           markerRoutePathWaypoints = [];
-          $scope.waypoints.forEach((waypoint) => {
+          const waypointsToPlot = $scope.waypoints ? $scope.waypoints : createdWaypoints;
+          waypointsToPlot.forEach((waypoint) => {
             markerRoutePathWaypoints.push({ lat: waypoint.lat, lng: waypoint.lng });
           });
           routePath.setPath(markerRoutePathWaypoints);
@@ -89,6 +112,7 @@ function googleMap($window, $state, Waypoint) {
           waypoint: waypoint
         });
 
+
         //EVENT LISTENER FOR EDIT
         marker.addListener('dragend', handleEvent);
 
@@ -106,7 +130,7 @@ function googleMap($window, $state, Waypoint) {
           });
 
           // POPULATE INFO WINDOW
-          const contentString = '<h1>' + waypoint.route.title +'</h1>' + '<p>' + waypoint.route.route_description + '</p><h5>Click the marker for route details</h5>';
+          const contentString = '<h1>' + waypoint.route.title +'</h1>' + '<p>' + waypoint.route.route_description + '</p><h5>Click the marker for route details</h5><style> h1 { border: 1px solid #E37222; color: #E37222; text-align: center; border-radius: 5px;} p {color: #777879} h5 {color: #777879; text-decoration: underline;}</style>';
           const infoWindow = new $window.google.maps.InfoWindow({
             content: contentString
           });

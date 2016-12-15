@@ -1,14 +1,55 @@
-<google-map center="routesShow.center" is-Traceable="true" is-editable="true" zoom="13" ng-if="routesShow.center" waypoints="routesShow.route.waypoints" class="routesShowMap"></google-map>
-
-
+<google-map center="routesShow.center" is-Traceable="true" is-editable="routesShow.isCurrentUser" zoom="13" ng-if="routesShow.center" waypoints="routesShow.route.waypoints" class="routesShowMap"></google-map>
 
 <div class="routesShowFooter">
-  <ul>
-    <li>{{ routesShow.route.title}}</li>
-    <li>{{ routesShow.route.route_description}}</li>
-    <li>{{ routesShow.route.number_of_participants}}</li>
-    <li>{{ routesShow.route.conditions}}</li>
-    <li>{{ routesShow.route.season}}</li>
-  </ul>
 
+  <div class="showRouteInfo" ng-if="!routesShow.switchEditState">
+
+    <ul>
+      <li><h3>{{ routesShow.route.title}}</h3></li>
+      <li>{{ routesShow.route.route_description}}</li><br><br>
+      <li>Group Size: {{ routesShow.route.number_of_participants}}</li> <br>
+      <li>{{ routesShow.route.season}}</li>
+      <li>- {{ routesShow.route.conditions}}</li>
+    </ul>
+    <button class="btn btn-primary toggle" type="button" name="button" ng-click="routesShow.switchEditState = true" ng-if="!routesShow.switchEditState" ng-show="routesShow.isCurrentUser">Edit</button>
+  </div>
+  <section class="row forms">
+    <div class="editRouteInfo" ng-if="routesShow.switchEditState">
+      <div ng-controller="RoutesEditController as routesEdit">
+        <form>
+
+            <div class="col-md-6 .col-md-offset-3">
+              <label for="title">Route Title</label>
+              <input class="" name="title" ng-model="routesEdit.route.title">
+            </div>
+
+            <div class="col-md-6 .col-md-offset-3">
+              <label for="route_description">Route Desciption</label>
+              <input class="" name="route_description" ng-model="routesEdit.route.route_description" placeholder="Summary of the Route. For example, directions, conditions, any special equipment (ropes, crampons etc) any difficulties encountered">
+            </div>
+
+            <div class="col-md-6 .col-md-offset-3">
+              <label for="number_of_participants">Number of walkers</label>
+              <input class="" name="number_of_participants" type="number" ng-model="routesEdit.route.number_of_participants" placeholder="2">
+            </div>
+
+            <div class="col-md-6 .col-md-offset-3">
+              <label for="conditions">Conditions</label>
+              <input class="" name="conditions" ng-model="routesEdit.route.conditions">
+            </div>
+
+            <div class="col-md-6 .col-md-offset-3">
+              <label for="season">Season:</label><br>
+              <input class="" name="season" type="radio" value="spring" ng-model="routesEdit.route.season">Spring<br>
+              <input class="" name="season" type="radio" value="summer" ng-model="routesEdit.route.season">Summer<br>
+              <input class="" name="season" type="radio" value="autumn" ng-model="routesEdit.route.season">Autumn<br>
+              <input class="" name="season" type="radio" value="winter" ng-model="routesEdit.route.season">Winter
+            </div>
+
+            <button class="btn btn-primary" type="submit" ng-click="routesEdit.update()">Update Route</button>
+            <button class="btn btn-danger" type="button" ng-click="routesShow.delete()">Delete Route</button>
+        </form>
+      </div>
+    </div>
+  </section>
 </div>

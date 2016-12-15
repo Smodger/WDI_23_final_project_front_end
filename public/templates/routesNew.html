@@ -1,1 +1,40 @@
-<h1>New Route</h1>
+<section class="row form">
+  <form ng-submit="routesNew.create()">
+
+      <div class="col-md-6 col-md-offset-3">
+        <label for="title">Route Title</label>
+        <input class="" name="title" ng-model="routesNew.route.title">
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <label for="route_description">Route Desciption</label>
+        <input class="textarea" name="route_description" type="textarea" ng-model="routesNew.route.route_description" placeholder="Summary of the Route. For example, directions, conditions, any special equipment (ropes, crampons etc) any difficulties encountered">
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <label for="number_of_participants">Number of walkers</label>
+        <input class="" name="number_of_participants" type="number" ng-model="routesNew.route.number_of_participants" placeholder="2">
+      </div>
+
+
+      <div class="col-md-6 col-md-offset-3">
+        <label for="conditions">Conditions</label>
+        <input class="" name="conditions" ng-model="routesNew.route.conditions">
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <label for="season"><strong>Season:</strong></label><br>
+        <input class="" name="season" type="radio" value="spring" ng-model="routesNew.route.season">Spring<br>
+        <input class="" name="season" type="radio" value="summer" ng-model="routesNew.route.season">Summer
+        <input class="" name="season" type="radio" value="autumn" ng-model="routesNew.route.season">Autumn<br>
+        <input class="" name="season" type="radio" value="winter" ng-model="routesNew.route.season">Winter
+      </div>
+
+      <button type="button" ng-click="routesNew.createRoute()" ng-if="!routesNew.showmap">Add Waypoints</button>
+      <button type="button" ui-sref="routesShow({id: routesNew.routeId})" ng-if="routesNew.showmap">Submit</button>
+
+      <google-map route-id="routesNew.routeId" is-traceable="true" center="{lat: 53.07326, lng: -3.9255007}" zoom="11" ng-if="routesNew.showmap"> MAP HERE  </google-map>
+
+  </form>
+
+</section>

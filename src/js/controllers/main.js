@@ -30,4 +30,19 @@ function MainController($auth, $state, $rootScope) {
   $rootScope.$on('$stateChangeStart', secureState);
 
   main.logout = logout;
+
+  main.getLocation = getLocation;
+  function getLocation() {
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position){
+        main.position = position;
+        main.myLat = main.position.coords.latitude.toFixed(4);
+        main.myLng = main.position.coords.longitude.toFixed(4);
+        $('#longLat').append(`<h2> Latitude: ${main.myLat}, Longitude:  ${main.myLng}</h2>`);
+      }.bind(main));
+    } else {
+      return 'Error in getting position';
+    }
+  }
 }

@@ -1,8 +1,7 @@
-<h1>Users Show</h1>
 
-<h2>{{ usersShow.user.username }}</h2>
-<h4>{{ usersShow.user.email }}</h4>
-
-<a ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.editable">Edit</a>
-<button ng-click="usersShow.delete()" ng-if="usersShow.editable">Delete</button>
-<button ng-click="usersShow.allowUserToEdit()">Check</button>
+<div class="image">
+  <h2>Welcome back {{ usersShow.user.username }}!</h2><br><br>
+  <h4>Email: {{ usersShow.user.email }}</h4>
+  <button  class="btn btn-primary" ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.editable">Edit</button>
+  <button  class="btn btn-danger" ng-click="usersShow.delete()" ng-if="usersShow.editable">Delete</button>
+</div>

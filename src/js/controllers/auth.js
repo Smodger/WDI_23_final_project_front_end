@@ -28,7 +28,7 @@ function LoginController($auth, $state) {
     $auth.login(login.credentials)
       .then(() => {
         // how to store current user?
-        $state.go('usersIndex');
+        $state.go('routesIndex');
       });
   }
 
