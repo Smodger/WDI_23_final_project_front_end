@@ -1,7 +1,10 @@
-
-<div class="image">
-  <h2>Welcome back {{ usersShow.user.username }}!</h2><br><br>
-  <h4>Email: {{ usersShow.user.email }}</h4>
-  <button  class="btn btn-primary" ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.editable">Edit</button>
-  <button  class="btn btn-danger" ng-click="usersShow.delete()" ng-if="usersShow.editable">Delete</button>
-</div>
+<section class="lukeReynolds">
+  <div class="image">
+    <div class="userInfo">
+      <h2>Welcome back {{ usersShow.user.username }}!</h2><br>
+      <h4>Email: {{ usersShow.user.email }}</h4>
+    </div>
+    <button  class="btn btn-primary" ui-sref="usersEdit({ id: usersShow.user.id })" ng-if="usersShow.editable">Edit</button>
+    <button  class="btn btn-danger" ng-click="usersShow.delete()" ng-if="usersShow.editable">Delete</button>
+  </div>
+</section>

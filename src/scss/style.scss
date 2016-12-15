@@ -103,12 +103,21 @@ nav.navbar {
   }
 }
 .image {
-  margin: auto;
-  margin-top: 30vh;
-  background-image: url("http://i2.walesonline.co.uk/lifestyle/fun-stuff/article10583610.ece/ALTERNATES/s615b/Image-11.jpg");
+  width: calc(100vw -208px);
+  height: 100vh;
+  background-size: contain;
+  background-position: center;
+  background-image: url("http://i4.walesonline.co.uk/incoming/article10583820.ece/ALTERNATES/s615b/SP-16.jpg");
   background-repeat: no-repeat;
-  width: 100vh;
-  color: white;
+
+  color: #555555;
+}
+
+.lukeReynolds {
+  background-color: #EEE;
+  h2 {
+    padding: 0px;
+  }
 }
 
 #mountainRescue {
