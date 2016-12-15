@@ -58,6 +58,11 @@ gulp.task('scripts', () => {
   //  .pipe(livereload());
 });
 
+"scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
 // styles
 gulp.task('styles', () => {
   return gulp.src('src/scss/style.scss')
@@ -100,7 +105,7 @@ gulp.task('nodemon', () => {
 
 // watch
 gulp.task('watch', () => {
-  // livereload.listen(); 
+  // livereload.listen();
   gulp.watch('src/**/*.html', ['html']);
   gulp.watch('src/**/*.js', ['scripts']);
   gulp.watch('src/**/*.scss', ['styles', 'styles:vendor']);
