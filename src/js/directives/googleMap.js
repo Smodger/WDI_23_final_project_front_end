@@ -12,6 +12,7 @@ function googleMap($window, $state, Waypoint) {
       center: '=',
       zoom: '=',
       waypoints: '=',
+
       hasInfoWindows: '=',
       isEditable: '=',
       isTraceable: '=',
@@ -115,6 +116,9 @@ function googleMap($window, $state, Waypoint) {
 
         //EVENT LISTENER FOR EDIT
         marker.addListener('dragend', handleEvent);
+
+        // Disable zoom in on double click
+        map.setOptions({disableDoubleClickZoom: true });
 
         // ROUTE INDEX INFO WINDOW
         if($scope.hasInfoWindows) {

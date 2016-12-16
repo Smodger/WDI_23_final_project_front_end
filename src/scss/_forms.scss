@@ -2,9 +2,10 @@ form {
   padding-top: 20px;
   padding-left: 50px;
   padding-right: 50px;
-  font-size: 25px;
+  font-size: 18px;
   color: #777879;
   background-color: #EEE;
+  height:100vh;
 
   input:placeholder-shown {
     font-size: 18px;
@@ -43,12 +44,22 @@ form {
     width: 100%;
     margin: auto;
   }
-  .radio {
+  .radioDiv {
     display: inline;
+    width: 100%;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+
+  .radioButton {
+    margin-left: 50%;
+  }
+
   .btn.btn-primary {
     width: 100%;
     background-color: #E37222;
     border: 1px solid #E37222;
+    margin-bottom: 10px;
   }
 }

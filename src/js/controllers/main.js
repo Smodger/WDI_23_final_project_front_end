@@ -7,7 +7,6 @@ function MainController($auth, $state, $rootScope) {
   const main = this;
 
   main.isLoggedIn = $auth.isAuthenticated;
-  main.currentUser = $auth.getPayload();
 
   function logout() {
     $auth.logout()
@@ -19,6 +18,10 @@ function MainController($auth, $state, $rootScope) {
   const protectedStates = ['usersEdit'];
 
   function secureState(e, toState, toParams) {
+
+    if ($auth.isAuthenticated()) {
+      main.currentUser = $auth.getPayload();
+    }
 
     if((!$auth.isAuthenticated() &&
     protectedStates.includes(toState.name)) ||

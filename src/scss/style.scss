@@ -41,12 +41,9 @@ ul {
   //   bottom: 5px;
   //   display: inline-block;
   // }
-  // .btn.btn-danger {
-  //   position: relative;
-  //   left: 10px;
-  //   bottom: 5px;
-  //   display: inline-block;
-  // }
+  .btn.btn-danger {
+    width: 100%;
+  }
   li {
     list-style-type: none !important;
     display: inline-block;
@@ -75,11 +72,15 @@ nav.navbar {
   padding: 50px;
   display: block;
   margin: 0;
+  color: #777879;
   h2 {
-    color: #555555;
+    color: #777879;
     text-align: center;
     padding: 20px 0 0 0;
-
+  }
+  .btn.btn-primary {
+    background-color: #3CB6CE;
+    border: 1px solid #3CB6CE;
   }
   .container{
     padding-right: 15px;
@@ -88,18 +89,17 @@ nav.navbar {
     margin-left: auto;
     .titlearea {
       font-weight: 700;
-      color: #555555;
+      color: #777879;
     }
     .page-content {
       box-sizing: border-box;
       font-weight: 400;
       font-size: 16px;
-      color: #111111;
+      color: #777879;
     }
     .locationButton {
       width: 100%;
     }
-
   }
 }
 .image {
@@ -121,7 +121,9 @@ nav.navbar {
 }
 
 #mountainRescue {
-  background-color: #d6d6d6;
+  // background-color: #d6d6d6;
+  background-color: #eee;
+  color: #3CB6CE;
   width:100%;
   padding: 50px;
   display: block;
@@ -137,23 +139,25 @@ nav.navbar {
     margin-left: auto;
     .titlearea {
       font-weight: 700;
-      color: #555555;
+      color: #3CB6CE;
     }
     .page-content {
       box-sizing: border-box;
       font-weight: 400;
       font-size: 16px;
-      color: #111111;
+      color: #3CB6CE;
     }
   }
 }
 
 #textService {
-  background-color: beige;
+  // background-color: beige;
+  background-color: #ffffff;
   width: 100%;
   padding: 50px;
   display: block;
   margin: 0px;
+  color: #777879;
   a {
     text-align: center;
     display: block;
@@ -165,13 +169,13 @@ nav.navbar {
     margin-left: auto;
     .titlearea {
       font-weight: 700;
-      color: #555555;
+      color: #777879;
     }
     .page-content {
       box-sizing: border-box;
       font-weight: 400;
       font-size: 16px;
-      color: #111111;
+      color: #777879;
     }
   }
 }

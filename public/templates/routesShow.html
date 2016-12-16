@@ -38,12 +38,19 @@
               <input class="" name="conditions" ng-model="routesEdit.route.conditions">
             </div>
 
-            <div class="col-md-6 .col-md-offset-3">
-              <label for="season">Season:</label><br>
-              <input class="" name="season" type="radio" value="spring" ng-model="routesEdit.route.season">Spring<br>
-              <input class="" name="season" type="radio" value="summer" ng-model="routesEdit.route.season">Summer<br>
-              <input class="" name="season" type="radio" value="autumn" ng-model="routesEdit.route.season">Autumn<br>
-              <input class="" name="season" type="radio" value="winter" ng-model="routesEdit.route.season">Winter
+            <div class="col-md-6 .col-md-offset-3 radioDiv ">
+              <label class="Radio" for="season">Spring
+                <input class="radioButton" name="season" type="radio" value="Spring" ng-model="routesEdit.route.season">
+              </label>
+                <label class="Radio" for="season">Summer
+                  <input class="radioButton" name="season" type="radio" value="Summer" ng-model="routesEdit.route.season">
+              </label>
+                <label class="Radio" for="season">Autumn
+              <input class="radioButton" name="season" type="radio" value="Autumn" ng-model="routesEdit.route.season">
+                </label>
+              <label class="Radio" for="season">Winter
+                <input class="radioButton" name="season" type="radio" value="Winter" ng-model="routesEdit.route.season">
+              </label>
             </div>
 
             <button class="btn btn-primary" type="submit" ng-click="routesEdit.update()">Update Route</button>

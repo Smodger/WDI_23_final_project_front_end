@@ -22,12 +22,19 @@
         <input class="" name="conditions" ng-model="routesNew.route.conditions" placeholder="Sunny/Showers/Snow/Poor Visibility">
       </div><br>
 
-      <div class="box col-md-6 col-md-offset-3">
-        <label for="season">Season:</label><br>
-        <input class="radio" name="season" type="radio" value="spring" ng-model="routesNew.route.season">Spring
-        <input class="radio" name="season" type="radio" value="summer" ng-model="routesNew.route.season">Summer
-        <input class="radio" name="season" type="radio" value="autumn" ng-model="routesNew.route.season">Autumn
-        <input class="radio" name="season" type="radio" value="winter" ng-model="routesNew.route.season">Winter
+      <div class="col-md-6 .col-md-offset-3 radioDiv ">
+        <label class="Radio" for="season">Spring
+          <input class="radioButton" name="season" type="radio" value="Spring" ng-model="routesEdit.route.season">
+        </label>
+          <label class="Radio" for="season">Summer
+            <input class="radioButton" name="season" type="radio" value="Summer" ng-model="routesEdit.route.season">
+        </label>
+          <label class="Radio" for="season">Autumn
+        <input class="radioButton" name="season" type="radio" value="Autumn" ng-model="routesEdit.route.season">
+          </label>
+        <label class="Radio" for="season">Winter
+          <input class="radioButton" name="season" type="radio" value="Winter" ng-model="routesEdit.route.season">
+        </label>
       </div>
 
       <button type="button" class="btn btn-primary" ng-click="routesNew.createRoute()" ng-if="!routesNew.showmap">Add Waypoints</button>
